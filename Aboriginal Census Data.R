@@ -14,6 +14,8 @@ data2001$Year <- 2001
 data2011$Year <- 2011
 data2006$Year <- 2006
 
+data2001$sex <- data2001$sexp
+
 data2001$pr <- data2001$provp
 
 data2001$hhtype <- data2001$htypep
@@ -52,9 +54,33 @@ data2001$totinc <- data2001$totincp
 
 data2001$gtrfs <- data2001$tgovtp
 
-data2001$hhinc <- data2001$hhincp
+data2001$hhinc[data2001$hhincp == 1] <- 1
+data2001$hhinc[data2001$hhincp == 2] <- 1
+data2001$hhinc[data2001$hhincp == 3] <- 1
+  data2001$hhinc[data2001$hhincp == 4] <- 2
+  data2001$hhinc[data2001$hhincp == 5] <- 3
+  data2001$hhinc[data2001$hhincp == 6] <- 4
+  data2001$hhinc[data2001$hhincp == 7] <- 5
+  data2001$hhinc[data2001$hhincp == 8] <- 7
+  data2001$hhinc[data2001$hhincp == 9] <- 9
+  data2001$hhinc[data2001$hhincp == 10] <- 10
+  data2001$hhinc[data2001$hhincp == 11] <- 11
+  data2001$hhinc[data2001$hhincp == 12] <- 12
+  data2001$hhinc[data2001$hhincp == 13] <- 13
+  data2001$hhinc[data2001$hhincp == 14] <- 14
+  data2001$hhinc[data2001$hhincp == 15] <- 15
+  data2001$hhinc[data2001$hhincp == 16] <- 16
+  data2001$hhinc[data2001$hhincp == 17] <- 17
+  data2001$hhinc[data2001$hhincp == 18] <- 18
+  data2001$hhinc[data2001$hhincp == 19] <- 19
+  data2001$hhinc[data2001$hhincp == 20] <- 20
+  data2001$hhinc[data2001$hhincp == 21] <- 22
+  data2001$hhinc[data2001$hhincp == 22] <- 25
+  data2001$hhinc[data2001$hhincp == 23] <- 27
 
 data2001$weight <- data2001$weightp
+
+data2001$marsth <- data2001$marstlp
 
 data2001$pkids <- data2001$prescp
 
@@ -71,22 +97,22 @@ data2001$aboid[data2001$absrp==4] <- 3
 data2001$aboid[data2001$absrp==5] <- 4
 data2001$aboid[data2001$absrp==6] <- 5
 
-names(data2011)
-summary(data2011$aboid)
-tab(data2011$aboid)
-xyplot(data2011$aboid~data2011$cma)
 
-dataM <- rbind.fill(data2011,data2006)
-dataM2 <- rbind.fill(dataM,data2001)
+#dataM <- rbind.fill(data2011,data2006)
+#dataM2 <- rbind.fill(dataM,data2001)
 dataS <- rbind.fill(data2011,data2006,data2001)
-summary(dataM2$Year)
-summary(dataS$Year)
-length(dataM2$Year)
-length(dataS$Year)
 
+dataS$Aboriginal[dataS$aboid==1 ] <- 1
+dataS$Aboriginal[dataS$aboid==2 ] <- 1
+dataS$Aboriginal[dataS$aboid==3 ] <- 1
+dataS$Aboriginal[dataS$aboid==4 ] <- 1
+dataS$Aboriginal[dataS$aboid==5 ] <- 1
+dataS$Aboriginal[dataS$aboid==6 ] <- 0
 
-length(dataS$aboid)
-length(data2001$aboid)
-length(data2006$aboid)
-length(data2011$aboid)
+dataST <- dataS[which(dataS$totinc < 8888888),]
+
+length(dataS$totinc)
+length(dataST$totinc)
+summary(dataST)
+write.csv(dataST,"/Users/heatherkrause/Desktop/Canada Data/Canada Census 2001 2006 2011.csv")
 
