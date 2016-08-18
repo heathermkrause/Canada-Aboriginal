@@ -54,6 +54,18 @@ data2001$totinc <- data2001$totincp
 
 data2001$gtrfs <- data2001$tgovtp
 
+data2001$hdgree[data2001$dgreep==1] <- 1
+  data2001$hdgree[data2001$dgreep==2] <- 2
+  data2001$hdgree[data2001$dgreep==3] <- 3
+  data2001$hdgree[data2001$dgreep==4] <- 5
+  data2001$hdgree[data2001$dgreep==5] <- 8
+  data2001$hdgree[data2001$dgreep==6] <- 9
+  data2001$hdgree[data2001$dgreep==7] <- 10
+  data2001$hdgree[data2001$dgreep==8] <- 11
+  data2001$hdgree[data2001$dgreep==9] <-12
+  data2001$hdgree[data2001$dgreep==10] <- 13
+  
+  
 data2001$hhinc[data2001$hhincp == 1] <- 1
 data2001$hhinc[data2001$hhincp == 2] <- 1
 data2001$hhinc[data2001$hhincp == 3] <- 1
