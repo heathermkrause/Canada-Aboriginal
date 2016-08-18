@@ -9,3 +9,4 @@ data2011 <- read.csv("/Users/heatherkrause/Desktop/Canada Data/Canada NHS 2011.c
 names(data2011)
 summary(data2011$aboid)
 tab(data2011$aboid)
+xyplot(data2011$aboid~data2011$cma)
