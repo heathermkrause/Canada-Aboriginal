@@ -6,3 +6,6 @@ library(dplyr)
 library(ggplot2)
 
 data2011 <- read.csv("/Users/heatherkrause/Desktop/Canada Data/Canada NHS 2011.csv",na.strings = c("", " ", "NA", "."))
+names(data2011)
+summary(data2011$aboid)
+tab(data2011$aboid)
