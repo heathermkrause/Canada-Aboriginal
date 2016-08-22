@@ -127,4 +127,4 @@ length(dataS$totinc)
 length(dataST$totinc)
 summary(dataST)
 write.csv(dataST,"/Users/heatherkrause/Desktop/Canada Data/Canada Census 2001 2006 2011.csv")
-
+####This data is currently in Tableau
